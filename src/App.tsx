@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Shop, Checkout, Contacts, SignIn } from './pages'
+import { Route, Switch } from 'react-router-dom'
+import {
+  CartContextProvider,
+  CartContextObject,
+  ProductsContextObject,
+  ProductsContextProvider,
+} from './context'
+import NavBar from './components/navBar/navBar'
+import { CssBaseline } from '@mui/material'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <CssBaseline />
+      <CartContextProvider context={CartContextObject}>
+        <ProductsContextProvider context={ProductsContextObject}>
+          <NavBar />
+
+          <Switch>
+            <Route path='/' component={Shop} exact />
+            <Route path='/checkout' component={Checkout} exact />
+            <Route path='/contacts' component={Contacts} exact />
+            <Route path='/signin' component={SignIn} exact />
+            {/* <Route path="*" component={NotExists}/>*/}
+          </Switch>
+        </ProductsContextProvider>
+      </CartContextProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
