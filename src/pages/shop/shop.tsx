@@ -33,10 +33,10 @@ const Shop: React.FC = () => {
                 <CardMedia component='img' alt={product.name} height='200' image={product.image} />
                 <CardContent>
                   <Box display='flex' flexDirection='row' justifyContent='space-between'>
-                    <Typography gutterBottom variant='h5' component='div'>
+                    <Typography gutterBottom variant='body1' component='div'>
                       {product.name}
                     </Typography>
-                    <Typography gutterBottom variant='h5' component='div'>
+                    <Typography gutterBottom variant='body1' component='div'>
                         { currencyFormatter(product.price) }
                     </Typography>
                   </Box>

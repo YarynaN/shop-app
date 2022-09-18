@@ -36,7 +36,6 @@ function App() {
               <Route path='/checkout' component={Checkout} exact />
               <Route path='/contacts' component={Contacts} exact />
               <Route path='/signin' component={SignIn} exact />
-              {/* <Route path="*" component={NotExists}/>*/}
             </Switch>
           </ProductsContextProvider>
         </CartContextProvider>
