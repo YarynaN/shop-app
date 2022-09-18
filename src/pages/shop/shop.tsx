@@ -10,6 +10,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
+import {currencyFormatter} from '../../utils/currencyFormatter';
 
 const Shop: React.FC = () => {
   const cartContext = useCartContext();
@@ -36,7 +37,7 @@ const Shop: React.FC = () => {
                       {product.name}
                     </Typography>
                     <Typography gutterBottom variant='h5' component='div'>
-                      {product.price}
+                        { currencyFormatter(product.price) }
                     </Typography>
                   </Box>
                 </CardContent>

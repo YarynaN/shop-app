@@ -27,7 +27,7 @@ const DesktopNavBar: React.FC = () => {
         {pages.map((page) => (
           <Button
             key={page.to}
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, display: 'block' }}
             component={NavLink}
             to={page.to}
           >

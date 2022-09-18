@@ -8,25 +8,39 @@ import {
   ProductsContextProvider,
 } from './context'
 import NavBar from './components/navBar/navBar'
-import { CssBaseline } from '@mui/material'
+import {createTheme, CssBaseline, ThemeProvider} from '@mui/material'
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#121112',
+    },
+    secondary: {
+      main: '#ffffff',
+    },
+  },
+});
 
 function App() {
   return (
     <>
       <CssBaseline />
-      <CartContextProvider context={CartContextObject}>
-        <ProductsContextProvider context={ProductsContextObject}>
-          <NavBar />
+      <ThemeProvider theme={theme}>
+        <CartContextProvider context={CartContextObject}>
+          <ProductsContextProvider context={ProductsContextObject}>
+            <NavBar />
 
-          <Switch>
-            <Route path='/' component={Shop} exact />
-            <Route path='/checkout' component={Checkout} exact />
-            <Route path='/contacts' component={Contacts} exact />
-            <Route path='/signin' component={SignIn} exact />
-            {/* <Route path="*" component={NotExists}/>*/}
-          </Switch>
-        </ProductsContextProvider>
-      </CartContextProvider>
+            <Switch>
+              <Route path='/' component={Shop} exact />
+              <Route path='/checkout' component={Checkout} exact />
+              <Route path='/contacts' component={Contacts} exact />
+              <Route path='/signin' component={SignIn} exact />
+              {/* <Route path="*" component={NotExists}/>*/}
+            </Switch>
+          </ProductsContextProvider>
+        </CartContextProvider>
+      </ThemeProvider>
     </>
   )
 }

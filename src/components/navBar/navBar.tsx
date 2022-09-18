@@ -5,7 +5,7 @@ import MobileNavBar from './mobileMenu'
 import CartIcon from './cartIcon'
 
 const NavBar: React.FC = () => (
-  <AppBar position='static'>
+  <AppBar position='static' color="secondary">
     <Container maxWidth='xl'>
       <Toolbar disableGutters>
         <DesktopNavBar />

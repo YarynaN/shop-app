@@ -13,6 +13,7 @@ import {
   Typography,
 } from '@mui/material'
 import { ArrowBackIos, ArrowForwardIos, Close } from '@mui/icons-material'
+import {currencyFormatter} from '../../utils/currencyFormatter';
 
 const Checkout: React.FC = () => {
   const cartContext = useCartContext()
@@ -76,7 +77,7 @@ const Checkout: React.FC = () => {
                       </IconButton>
                     </Box>
                   </TableCell>
-                  <TableCell align='right'>{item.product.price}</TableCell>
+                  <TableCell align='right'>{ currencyFormatter(item.product.price) }</TableCell>
                   <TableCell align='right'>
                     <IconButton onClick={() => cartContext.removeProduct(item.product, true)}>
                       <Close />

@@ -22,7 +22,7 @@ const CartIcon: React.FC = () => {
       <IconButton size='large' onClick={handleOpenUserMenu} color='inherit'>
         <Badge
           badgeContent={_.reduce(cartContext.items, (sum, item) => sum + item.quantity, 0)}
-          color='secondary'
+          color='primary'
         >
           <ShoppingBagOutlined />
         </Badge>

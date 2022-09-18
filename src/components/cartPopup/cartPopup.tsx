@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material'
 import { NavLink } from 'react-router-dom'
+import {currencyFormatter} from '../../utils/currencyFormatter';
 
 type CartProps = {
   handleClose: () => void
@@ -63,7 +64,7 @@ const CartPopup: React.FC<CartProps> = ({ handleClose, isOpen }) => {
               <ListItemText>
                 <Typography textAlign='center'>{item.product.name}</Typography>
                 <Typography textAlign='center'>
-                  {item.quantity} x {item.product.price}
+                  {item.quantity} x { currencyFormatter(item.product.price) }
                 </Typography>
               </ListItemText>
             </MenuItem>
