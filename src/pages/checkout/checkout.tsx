@@ -55,7 +55,7 @@ const Checkout: React.FC = () => {
                     />
                   </TableCell>
                   <TableCell align='right'>
-                    <Typography variant='h5' component='span'>
+                    <Typography variant='body1' component='span'>
                       {item.product.name}
                     </Typography>
                   </TableCell>
@@ -69,7 +69,7 @@ const Checkout: React.FC = () => {
                       <IconButton onClick={() => cartContext.removeProduct(item.product, false)}>
                         <ArrowBackIos />
                       </IconButton>
-                      <Typography variant='h6' component='span'>
+                      <Typography variant='body1' component='span'>
                         {item.quantity}
                       </Typography>
                       <IconButton onClick={() => cartContext.addProduct(item.product)}>
