@@ -61,7 +61,7 @@ const MobileNavBar: React.FC = () => {
           display: { xs: 'flex', md: 'none' },
         }}
       >
-        Test Shop
+        Lovely Shop
       </Typography>
     </>
   )

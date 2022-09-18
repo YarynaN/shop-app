@@ -15,7 +15,7 @@ const DesktopNavBar: React.FC = () => {
           display: { xs: 'none', md: 'flex' },
         }}
       >
-        Test Shop
+        Lovely Shop
       </Typography>
       <Box
         sx={{
